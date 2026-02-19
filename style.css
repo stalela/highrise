@@ -400,7 +400,7 @@ h1, h2, h3, h4 {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('images/hero-bg.png') center/cover no-repeat;
+  background: url('/images/hero-bg.png') center/cover no-repeat;
   opacity: 0.45;
   transform: scale(1.04);
   transition: transform 8s var(--ease);
