@@ -5,3 +5,10 @@ dist/
 dist-ts/
 *.log
 .DS_Store
+.vercel
+
+# Raw source photos (large originals, not committed)
+images/raw/*.jpg
+images/raw/*.jpeg
+images/raw/*.png
+images/raw/*.webp
