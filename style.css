@@ -1,23 +1,23 @@
 /* ═══════════════════════════════════════════════════════════
-   HIGHRISE BUILD INVESTMENTS — WAKANDA-EPWORTH GRANITE THEME
+   HIGHRISE BUILD INVESTMENTS — BRAND THEME
    ═══════════════════════════════════════════════════════════ */
 
 /* ═══ DESIGN TOKENS ═══ */
 :root {
-  /* Stone palette */
-  --stone-void:    #06060a;
-  --stone-dark:    #0d0d14;
-  --stone-mid:     #181823;
-  --stone-warm:    #22222d;
-  --stone-border:  #2e2e3e;
-  --stone-muted:   #9494ab;
-  --stone-light:   #c8c8d8;
+  /* Deep navy/indigo palette (from logo) */
+  --stone-void:    #080c1e;
+  --stone-dark:    #0f1330;
+  --stone-mid:     #181d48;
+  --stone-warm:    #202560;
+  --stone-border:  #2d3191;
+  --stone-muted:   #72749e;
+  --stone-light:   #d9e0e8;
 
-  /* Copper accents */
-  --copper:        #c07840;
-  --copper-light:  #e0a060;
-  --copper-glow:   rgba(192,120,64,0.25);
-  --copper-subtle: rgba(192,120,64,0.12);
+  /* Sky blue accents (from logo) */
+  --copper:        #05adee;
+  --copper-light:  #6ecfef;
+  --copper-glow:   rgba(5,173,238,0.25);
+  --copper-subtle: rgba(5,173,238,0.12);
 
   /* Typography */
   --font-heading:  'Space Grotesk', 'Inter', system-ui, sans-serif;
@@ -211,7 +211,7 @@ h1, h2, h3, h4 {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(6,6,10,0.88);
+  background: rgba(8,12,30,0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--stone-border);
@@ -415,9 +415,9 @@ h1, h2, h3, h4 {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(6,6,10,0.55) 0%,
-    rgba(6,6,10,0.4) 40%,
-    rgba(6,6,10,0.85) 100%
+    rgba(8,12,30,0.55) 0%,
+    rgba(8,12,30,0.35) 40%,
+    rgba(8,12,30,0.88) 100%
   );
 }
 
@@ -441,7 +441,7 @@ h1, h2, h3, h4 {
 
 @keyframes pulseGlow {
   0%, 100% { box-shadow: 0 0 24px var(--copper-glow), 0 0 48px var(--copper-glow); }
-  50%       { box-shadow: 0 0 40px rgba(192,120,64,0.4), 0 0 80px rgba(192,120,64,0.2); }
+  50%       { box-shadow: 0 0 40px rgba(5,173,238,0.45), 0 0 80px rgba(5,173,238,0.2); }
 }
 
 .hero-content h1 {

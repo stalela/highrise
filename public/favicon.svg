@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <!-- Background circle -->
-  <circle cx="32" cy="32" r="32" fill="#0a0a0c"/>
-  <!-- Building silhouette / H mark in copper -->
+  <circle cx="32" cy="32" r="32" fill="#080c1e"/>
+  <!-- Building silhouette / H mark in sky blue -->
   <!-- Left pillar -->
-  <rect x="13" y="14" width="9" height="36" rx="1.5" fill="#d4a574"/>
+  <rect x="13" y="14" width="9" height="36" rx="1.5" fill="#05adee"/>
   <!-- Right pillar -->
-  <rect x="42" y="14" width="9" height="36" rx="1.5" fill="#d4a574"/>
+  <rect x="42" y="14" width="9" height="36" rx="1.5" fill="#05adee"/>
   <!-- Crossbeam -->
-  <rect x="13" y="29" width="38" height="6" rx="1.5" fill="#d4a574"/>
+  <rect x="13" y="29" width="38" height="6" rx="1.5" fill="#05adee"/>
   <!-- Roof cap left -->
-  <rect x="11" y="11" width="13" height="4" rx="1" fill="#a4785a"/>
+  <rect x="11" y="11" width="13" height="4" rx="1" fill="#2d3191"/>
   <!-- Roof cap right -->
-  <rect x="40" y="11" width="13" height="4" rx="1" fill="#a4785a"/>
+  <rect x="40" y="11" width="13" height="4" rx="1" fill="#2d3191"/>
 </svg>
