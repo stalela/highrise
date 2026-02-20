@@ -4,8 +4,8 @@
   "description": "Premium construction, property development and building investments from Epworth, Harare, Zimbabwe.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0c",
-  "theme_color": "#d4a574",
+  "background_color": "#080c1e",
+  "theme_color": "#2d3191",
   "icons": [
     {
       "src": "/favicon.svg",

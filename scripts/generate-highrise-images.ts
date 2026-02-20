@@ -28,21 +28,21 @@ if (!API_KEY) {
 
 const BASE_URL = "https://dashscope-intl.aliyuncs.com";
 const MODEL    = "qwen-image-max";
-const OUTPUT_DIR = path.resolve(__dirname, "../images");
+const OUTPUT_DIR = path.resolve(__dirname, "../public/images");
 
 const NEGATIVE_PROMPT =
   "low quality, blurry, distorted, cartoonish, oversaturated, flat illustration, stock photo watermark, people looking at camera awkwardly, construction hard hat logos, western skyline, European architecture, low resolution.";
 
 /**
  * Brand prefix applied to every prompt.
- * Enforces the Wakanda-Epworth granite aesthetic:
- *  - Deep charcoal background tones
- *  - Warm copper-bronze architectural accents
+ * Enforces the Highrise brand aesthetic (derived from logo palette):
+ *  - Deep navy-indigo backgrounds (#080c1e → #2d3191)
+ *  - Vibrant sky-blue accents (#05adee, #6ecfef)
  *  - Zimbabwe granite / Chiremba balancing rocks visual vocabulary
  *  - Futuristic but grounded in African identity
  */
 const BRAND =
-  "Cinematic, hyperrealistic architectural photography. Zimbabwe landscape inspiration: ancient weathered granite boulders reminiscent of the Chiremba balancing rocks of Epworth and the stone walls of Great Zimbabwe. Deep charcoal and warm copper-bronze tones. Futuristic Wakanda-style construction aesthetic — bold, premium, African modernism. Sharp focus, dramatic lighting, high dynamic range.";
+  "Cinematic, hyperrealistic architectural photography. Zimbabwe landscape inspiration: ancient weathered granite boulders reminiscent of the Chiremba balancing rocks of Epworth and the stone walls of Great Zimbabwe. Deep navy-indigo backgrounds with vibrant sky-blue and electric-blue accents. Futuristic premium African construction aesthetic — bold, confident, modern. Sharp focus, dramatic blue-hour lighting, high dynamic range.";
 
 interface ImageDef {
   key: string;
@@ -56,7 +56,7 @@ const images: ImageDef[] = [
   {
     key:      "hero-bg",
     filename: "hero-bg.png",
-    prompt:   `${BRAND} HERO BACKGROUND: Aerial twilight view of a futuristic premium residential estate being constructed on rocky granite terrain in Zimbabwe. Cranes against a dramatic copper-sky sunset. Warm amber construction lights reflecting off dark granite rock formations in the foreground. Wide cinematic composition. Deep charcoal shadows, copper-gold highlights.`,
+    prompt:   `${BRAND} HERO BACKGROUND: Aerial blue-hour view of a futuristic premium residential estate being constructed on rocky granite terrain in Zimbabwe. Cranes silhouetted against a deep indigo-navy sky. Cool electric-blue and sky-blue construction lights reflecting off dark granite rock formations in the foreground. Wide cinematic composition. Deep navy shadows, sky-blue silver highlights.`,
     size:     "1664*928",
   },
 
@@ -64,7 +64,7 @@ const images: ImageDef[] = [
   {
     key:      "about-image",
     filename: "about-image.png",
-    prompt:   `${BRAND} ABOUT IMAGE: Two Black African construction professionals in smart safety attire reviewing large architectural blueprints on a sturdy stone table outdoors. Background: dramatic Zimbabwean granite boulders similar to Epworth. Warm copper afternoon light. Confident, expert body language. Square composition.`,
+    prompt:   `${BRAND} ABOUT IMAGE: Two Black African construction professionals in smart safety attire reviewing large architectural blueprints on a sturdy stone table outdoors. Background: dramatic Zimbabwean granite boulders similar to Epworth. Cool azure afternoon light with sky-blue reflections. Confident, expert body language. Square composition.`,
     size:     "928*928",
   },
 
@@ -72,37 +72,37 @@ const images: ImageDef[] = [
   {
     key:      "service-construction",
     filename: "service-construction.png",
-    prompt:   `${BRAND} SERVICE: Dramatic wide shot of an active premium residential construction site in Zimbabwe. Steel reinforcement, concrete forms, wooden formwork, workers in hard hats. Rocky terrain visible. Warm copper-bronze sunset lighting. Strong shadows.`,
+    prompt:   `${BRAND} SERVICE: Dramatic wide shot of an active premium residential construction site in Zimbabwe. Steel reinforcement, concrete forms, wooden formwork, workers in hard hats. Rocky terrain visible. Cool electric-blue dusk lighting. Strong deep-navy shadows.`,
     size:     "928*928",
   },
   {
     key:      "service-property",
     filename: "service-property.png",
-    prompt:   `${BRAND} SERVICE: Completed modern African luxury residential property — two-storey home with stone-cladded walls, copper-tinted glass, lush garden. Epworth-style granite feature wall. Golden hour lighting.`,
+    prompt:   `${BRAND} SERVICE: Completed modern African luxury residential property — two-storey home with stone-cladded walls, blue-tinted glass, lush garden. Epworth-style granite feature wall. Deep blue-hour dusk lighting with sky-blue reflections.`,
     size:     "928*928",
   },
   {
     key:      "service-renovation",
     filename: "service-renovation.png",
-    prompt:   `${BRAND} SERVICE: Interior renovation in progress — exposed granite stone feature wall being polished, premium tiles being laid, African hardwood ceiling installation. Warm copper pendant lights. Modern Zimbabwean interior feel.`,
+    prompt:   `${BRAND} SERVICE: Interior renovation in progress — exposed granite stone feature wall being polished, premium tiles being laid, African hardwood ceiling installation. Cool sky-blue and silver pendant lights. Sleek modern Zimbabwean interior with deep navy accent walls.`,
     size:     "928*928",
   },
   {
     key:      "service-consultancy",
     filename: "service-consultancy.png",
-    prompt:   `${BRAND} SERVICE: Black African architect and client reviewing 3D building model at a sleek charcoal desk. Digital screens showing architectural plans. Warm copper office lighting. Professional, futuristic office environment.`,
+    prompt:   `${BRAND} SERVICE: Black African architect and client reviewing 3D building model at a sleek navy desk. Digital screens glowing electric-blue with architectural plans. Cool sky-blue office lighting. Professional, futuristic office environment with deep indigo accents.`,
     size:     "928*928",
   },
   {
     key:      "service-investments",
     filename: "service-investments.png",
-    prompt:   `${BRAND} SERVICE: Premium property investment concept — scale architectural model of a residential development surrounded by financial documents, property title deeds, and a tablet showing value metrics. Copper light, charcoal desk.`,
+    prompt:   `${BRAND} SERVICE: Premium property investment concept — scale architectural model of a residential development surrounded by financial documents, property title deeds, and a tablet showing value metrics. Sky-blue accent lighting on a deep navy desk.`,
     size:     "928*928",
   },
   {
     key:      "service-equipment",
     filename: "service-equipment.png",
-    prompt:   `${BRAND} SERVICE: Premium construction equipment and materials — cement bags, steel rebar bundles, granite aggregate, power tools, surveying instruments arranged on site. Dramatic side lighting casting long copper shadows on dark ground.`,
+    prompt:   `${BRAND} SERVICE: Premium construction equipment and materials — cement bags, steel rebar bundles, granite aggregate, power tools, surveying instruments arranged on site. Dramatic side lighting casting long deep-navy shadows with sky-blue edge lighting.`,
     size:     "928*928",
   },
 
@@ -110,25 +110,25 @@ const images: ImageDef[] = [
   {
     key:      "project-1",
     filename: "project-1.png",
-    prompt:   `${BRAND} COMPLETED PROJECT: Handsome modern African residential estate — six homes with stone-cladded walls, double-pitch copper roofing, mature landscaping. Zimbabwe hills in background. Blue-sky photography with crisp shadows.`,
+    prompt:   `${BRAND} COMPLETED PROJECT: Handsome modern African residential estate — six homes with stone-cladded walls, deep navy-blue roofing, mature landscaping. Zimbabwe hills in background. Clear blue-sky photography with crisp electric-blue shadows.`,
     size:     "1024*768",
   },
   {
     key:      "project-2",
     filename: "project-2.png",
-    prompt:   `${BRAND} COMPLETED PROJECT: Three-storey commercial office building in Harare — dark granite exterior cladding, floor-to-ceiling glass, copper-finished entrance canopy. Dramatic dusk photography with interior lights glowing warm.`,
+    prompt:   `${BRAND} COMPLETED PROJECT: Three-storey commercial office building in Harare — dark granite exterior cladding, floor-to-ceiling glass, sky-blue-finished entrance canopy. Dramatic deep-blue dusk photography with interior lights glowing electric-blue.`,
     size:     "1024*768",
   },
   {
     key:      "project-3",
     filename: "project-3.png",
-    prompt:   `${BRAND} COMPLETED RENOVATION: Magazine-worthy interior of a renovated Harare home — exposed granite stone accent wall, African hardwood floors, copper pendant lights over an island kitchen. Open plan, airy, premium materials.`,
+    prompt:   `${BRAND} COMPLETED RENOVATION: Magazine-worthy interior of a renovated Harare home — exposed granite stone accent wall, African hardwood floors, sky-blue and chrome pendant lights over an island kitchen. Deep navy accent wall. Open plan, airy, premium materials.`,
     size:     "1024*768",
   },
   {
     key:      "project-4",
     filename: "project-4.png",
-    prompt:   `${BRAND} ACTIVE PROJECT SITE: Drone aerial shot of a large active construction site — concrete slab poured, walls going up, formwork visible, workers and vehicles. Set among Zimbabwean granite landscape. Copper late-afternoon light.`,
+    prompt:   `${BRAND} ACTIVE PROJECT SITE: Drone aerial shot of a large active construction site — concrete slab poured, walls going up, formwork visible, workers and vehicles. Set among Zimbabwean granite landscape. Deep blue twilight with electric-blue site lighting.`,
     size:     "1024*768",
   },
 ];
